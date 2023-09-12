@@ -8,10 +8,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
-        {"role": "system", "content": "
-        あなたは'もりた'という架空の人物です
-*発言の語尾は、'でちゅ！'か'でちゅよ'にしてください。
-*話を聞くときのあいづちは'eeeeee'にしてください。
+        {"role": "system", "content": "あなたは優秀な英語教師です。
          "}
         ]
 
