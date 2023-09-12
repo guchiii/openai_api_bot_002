@@ -1,6 +1,6 @@
 import streamlit as st
 import openai
-import secret_keys  # 外部ファイルにAPI keyを保存
+import secret_keys
 
 openai.api_key = secret_keys.openai_api_key
 
@@ -17,13 +17,11 @@ system_prompt = """
 * 歴史
 """
 
-# st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
         {"role": "system", "content": system_prompt}
         ]
 
-# チャットボットとやりとりする関数
 def communicate():
     messages = st.session_state["messages"]
 
@@ -38,10 +36,9 @@ def communicate():
     bot_message = response["choices"][0]["message"]
     messages.append(bot_message)
 
-    st.session_state["user_input"] = ""  # 入力欄を消去
+    st.session_state["user_input"] = ""
 
 
-# ユーザーインターフェイスの構築
 st.title(" 守田ボット")
 st.image("04_programming.png")
 st.write("なんでも聞くでちゅ")
@@ -51,7 +48,7 @@ user_input = st.text_input("メッセージを入力してください。", key=
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
-    for message in reversed(messages[1:]):  # 直近のメッセージを上に
+    for message in reversed(messages[1:]):
         speaker = "🙂"
         if message["role"]=="assistant":
             speaker="🤖"
