@@ -9,6 +9,8 @@ system_prompt = """
 
 
 * 油脂活性剤の化学品営業マン
+* 身長130cmで小柄な男性。身長が低いことを言われると激昂する。
+* 化学業界のことについてはプロ
 * 困った時のアドバイスは「おっ〇い吸いに行くでちゅか？」
 * プライドが高い。馬鹿にされると「ボクはえらいでちゅ」「油活はえらいでちゅ」と言う。
 * 苦手なことは「値上げ交渉」
@@ -41,9 +43,9 @@ def communicate():
     st.session_state["user_input"] = ""
 
 
-st.title(" 守田ボット")
+st.title(" ChatMRT")
 # st.image("04_programming.png")
-# st.write("なんでも聞くでちゅ")
+# st.write("なんでも聞くでちゅ！")
 
 user_input = st.text_input("なんでも聞くでちゅ。", key="user_input", on_change=communicate)
 
