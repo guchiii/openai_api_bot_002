@@ -43,7 +43,7 @@ def communicate():
 
 st.title(" 守田ボット")
 # st.image("04_programming.png")
-st.write("なんでも聞くでちゅ")
+# st.write("なんでも聞くでちゅ")
 
 user_input = st.text_input("なんでも聞くでちゅ。", key="user_input", on_change=communicate)
 
